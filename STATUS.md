@@ -5,10 +5,11 @@
 ## 首次 Cloud 接管
 
 - 真实 Cloud 已连接并运行；开始时没有仓库 checkout，现已在云端克隆唯一仓库，main 基线为 2880a7487481c005f467ca0aefed515f78c06e2e，初始工作区干净。
-- GitHub 连接读取显示 push 权限，main 未保护且无 ruleset；发布仍以实际写入结果为准。
+- GitHub 连接已实际完成 API 普通发布，main 未保护且无 ruleset；保留父提交和历史，未强推或改变账号设置。
 - 本次补齐七份中文维护文件和 scripts/check_config.py；shadowrocket.conf 保持原样。
 - 静态校验通过（对照 origin/main）；19 项标准库回归测试通过。最终联网内容校验四项均通过，TLS 验证保持开启，未修改分流配置。
-- GitHub 发布：检查完成、待普通发布；发布后追加实际提交及远端核验结果。iPhone 仍未实测。
+- GitHub 发布：维护实现已落入 main，提交 [e93f87fbf679a10a2f404fbffed545b419bbe0ad](https://github.com/Vapor-Byy/shadowrocket-config/commit/e93f87fbf679a10a2f404fbffed545b419bbe0ad)。已读取九个远端维护文件逐一比对一致，并通过 Git fast-forward 同步到本地；本记录随后单独提交。iPhone 仍未实测。
+- 固定 Raw URL 已读取并与本地 shadowrocket.conf 内容比对一致；核心配置 blob 仍为 44c894a2fd46661913ca30bae5dcde71abdf245b。无需 PR 合并；手机配置更新由用户执行。
 - 环境报告网络 unrestricted/enforced，本次不扩大放行范围；HTTPS 命令需执行工具的网络权限，保持继承代理和 TLS 校验。
 - 本会话只提供环境状态读取能力，无持久配置创建/发布工具；source_config_id/source_config_version_id 均为空。当前会话可执行维护，但不能据此声称已有发布的、下次手机可选择的仓库环境。
 
